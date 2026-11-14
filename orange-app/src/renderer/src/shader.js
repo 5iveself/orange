@@ -1,4 +1,5 @@
 import * as THREE from 'three';
+import { view } from './editor.js';
 
 const canvas = document.getElementById('shader-canvas');
 const renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
@@ -12,11 +13,20 @@ const camera = new THREE.OrthographicCamera(
   1, // far
 );
 
+const fragmentShader = view.state.doc.toString();
+
+const uniforms = {
+  iTime: { value: 0 },
+  iResolution:  { value: new THREE.Vector3() },
+};
+
 const scene = new THREE.Scene();
 const plane = new THREE.PlaneGeometry(2, 2);
-const material = new THREE.MeshBasicMaterial({
-  color: 'red',
+const material = new THREE.ShaderMaterial({
+  fragmentShader,
+  uniforms
 });
+
 scene.add(new THREE.Mesh(plane, material));
 
 function resizeRendererToDisplaySize(renderer) {

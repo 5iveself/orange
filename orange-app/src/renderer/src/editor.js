@@ -2,7 +2,7 @@ import { EditorView, basicSetup } from "codemirror"
 
 const editor = document.getElementById("editor")
 
-const view = new EditorView({
+export const view = new EditorView({
   doc: `uniform float u_time;
 
 void main() {
