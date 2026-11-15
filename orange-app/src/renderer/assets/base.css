@@ -4,6 +4,8 @@
 }
 
 :root {
+  --ev-c-orange: #FFA500;
+
   --ev-c-white: #ffffff;
   --ev-c-white-soft: #f8f8f8;
   --ev-c-white-mute: #f2f2f2;
@@ -44,10 +46,6 @@
   font-weight: normal;
 }
 
-ul {
-  list-style: none;
-}
-
 body {
   min-height: 100vh;
   color: var(--color-text);
@@ -70,4 +68,18 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+h1 {
+  color: var(--ev-c-orange);
+}
+
+button {
+  font-family: 'PixelifySans';
+  letter-spacing: 3px;
+  background-color: var(--ev-c-black-soft);
+  color: var(--ev-c-orange);
+  padding: 5px 1em;
+  outline: none;
+  border: 1px dashed var(--ev-c-orange);
 }

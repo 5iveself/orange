@@ -1,4 +1,10 @@
 import { EditorView, basicSetup } from "codemirror"
+import {LanguageSupport} from "@codemirror/language"
+import { glsl, glslCompletion } from "./glsl"
+
+export function glslExport() {
+  return new LanguageSupport(glsl, [glslCompletion])
+}
 
 const editor = document.getElementById("editor")
 
@@ -10,6 +16,6 @@ void main() {
 }`,
   parent: editor,
   extensions: [
-    basicSetup
+    basicSetup, glslExport()
   ]
 })

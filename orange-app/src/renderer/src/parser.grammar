@@ -1,0 +1,8 @@
+@tokens {
+  Identifier { $[a-zA-Z_]+ }
+  String { '"' (!["\\] | "\\" _)* '"' }
+  Boolean { "#t" | "#f" }
+  LineComment { ";" ![\n]* }
+  space { $[ \t\n\r]+ }
+  "(" ")"
+}

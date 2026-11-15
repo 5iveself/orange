@@ -6,7 +6,7 @@ import icon from '../../resources/icon.png?asset'
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
-    width: 700,
+    width: 805,
     height: 670,
     show: false,
     autoHideMenuBar: true,
